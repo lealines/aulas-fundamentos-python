@@ -27,4 +27,5 @@ while auxiliar:
 
 for tupla in ranking:
     for elemento in tupla:
-        print(f'{elemento}')
+        print()
+        print(f'{elemento}', end= ' ')
