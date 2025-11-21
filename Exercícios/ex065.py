@@ -1,22 +1,30 @@
 from random import randint
 
-jogador1 = dict()
-jogador2 = dict()
-jogador3 = dict()
-jogador4 = dict()
-jogador5 = dict()
+qtd_jogadores = int(input('Digite quantos jogadores vão jogar: '))
+jogadores = {}
 
-for c in range(0, 5):
-    num = randint(0,6)
-    jogador1['Dado'] = num
-    jogador2['Dado'] = num
-    jogador3['Dado'] = num
-    jogador4['Dado'] = num
-    jogador5['Dado'] = num
+for c in range(qtd_jogadores):
+    nome = input(f'Digite o nome do {c+1}º jogador: ')
+    jogada = randint(1,6)
 
-    print(jogador1)
-    print(jogador2)
-    print(jogador3)
-    print(jogador4)
-    print(jogador5)
+    jogadores[nome] = jogada
 
+auxiliar = jogadores.copy()
+ranking = list()
+
+while auxiliar:
+
+    maior_jogador = ''
+    maior_valor = 0
+
+    for jogador, jogada in auxiliar.items():
+        if jogada > maior_valor:
+            maior_jogador = jogador
+            maior_valor = jogada
+
+    ranking.append((maior_jogador, maior_valor))
+    del auxiliar[maior_jogador]
+
+for tupla in ranking:
+    for elemento in tupla:
+        print(f'{elemento}')
