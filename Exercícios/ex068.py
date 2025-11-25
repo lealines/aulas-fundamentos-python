@@ -41,9 +41,9 @@ for dados in pessoas:
             qtd_homens_acima_media += 1
 
 print()
-print('------------------')
-print('Informações:')
-print('------------------')
+print('--------------')
+print(' Informações:')
+print('--------------')
 print()
 print(f'Foram registadas {qtd_pessoas} pessoas.')
 print(f'A média de idades é {media_idades} anos.')
