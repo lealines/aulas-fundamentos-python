@@ -1,9 +1,8 @@
-def cabecalho(txt):
-    largura = len(txt)
-    tracos = '=' * (largura * 2)
+def cabecalho(msg):
+    size = (len(msg))
+    print("-="*(size*2))
+    print(f"{msg:^{size*4}}")
+    print("-="*(size*2))
 
-print(tracos)
-print(f'{txt:^{largura}}')
-print(tracos)
 
-cabecalho(input('Digite uma mensagem: '))
+cabecalho(input("Insere uma mensagem: "))
