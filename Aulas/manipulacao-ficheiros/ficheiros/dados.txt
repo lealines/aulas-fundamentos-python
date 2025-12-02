@@ -1,0 +1,4 @@
+Nome: Inês
+Ano de Nascimento: 2000
+Rendimentos Mensais: 5000
+Despesas Mensais: 1500

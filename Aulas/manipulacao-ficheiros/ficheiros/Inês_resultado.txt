@@ -1,0 +1,10 @@
+Nome: Inês
+Ano de Nascimento: 2000
+Rendimentos Mensais: 5000
+Despesas Mensais: 1500
+Montante do Crédito: 200000.0
+Prazo em anos: 40
+Idade: 25
+Remanescente: 3500.0
+Mensalidade: 416.6666666666667
+Situação: Aprovado
