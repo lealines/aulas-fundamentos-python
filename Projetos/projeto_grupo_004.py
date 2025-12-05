@@ -1,29 +1,41 @@
 # Inês / Julia / Nádia
 
 from pathlib import Path
+import os
 
 pasta = Path('bloco_notas')
 ficheiro = pasta / 'notas.txt'
+os.makedirs(pasta, exist_ok=True)
 
 def adicionar_nota():
+
     nota = input('Nota:\n--> ')
+
     with ficheiro.open('a', encoding='utf-8', errors='ignore') as file:
         file.write(nota + '\n')
+
     print('Nota adicionada!\n')
 
 
 def mostrar_notas():
-    notas = ficheiro.read_text(encoding='utf-8').strip()
-    print('\n--- Nota Gravadas ---')
+
+    if ficheiro.exists():
+        notas = ficheiro.read_text(encoding='utf-8').strip()
+    else:
+        notas = ''
+
+    print('\n--- Notas Gravadas ---')
     print(notas if notas else '\nNenhuma nota encontrada.')
 
 
 def apagar_notas():
+
     ficheiro.write_text('', encoding='utf-8', errors='ignore')
     print('\nNotas apagadas!\n')
 
 
 def pesquisar_notas():
+
     palavra = input('Palavra-chave:\n--> ').lower()
     resultados = []
 
@@ -32,14 +44,13 @@ def pesquisar_notas():
             if palavra in linha.lower():
                 resultados.append((numero, linha.strip()))
 
-    aberto.close()
-
     print('\n--- Pesquisa ---\n')
 
-
     if resultados:
+
         for numero, x in resultados:
             print(x)
+
     else:
         print(f'\nNenhuma nota encontrada com a palavra {palavra}!')
 
@@ -51,7 +62,6 @@ def mostrar_menu():
     print('[ 3 ] - Apagar todas as notas')
     print('[ 4 ] - Pesquisar notas por palavra-chave')
     print('[ 5 ] - Sair\n')
-
 
 def main():
     while True:
@@ -71,7 +81,6 @@ def main():
             break
         else:
             print('\nOpção inválida! Tente novamente!\n')
-
 
 if __name__ == '__main__':
     main()
