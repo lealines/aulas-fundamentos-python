@@ -32,13 +32,13 @@ while True:
     try:
         nota = float(entrada)
         if nota < 0 or nota > 20:
-            print("Nota inválida! Insira um valor entre 0 e 20.")
+            print("\nValor inválido! Insira um valor entre 0 e 20.")
         else:
             notas_turma.append(nota)
     except ValueError:
-        print("Entrada inválida! Digite um número.")
+        print("Valor inválido! Digite um número.")
 
 resultado = analisar_notas(notas_turma)
-print("\nResultado da turma:")
+print("\n--- Resultado da turma ---\n")
 for chave, valor in resultado.items():
     print(f"{chave.title()}: {valor}")
