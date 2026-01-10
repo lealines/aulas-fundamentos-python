@@ -1,13 +1,19 @@
 import sqlite3
 
 def conectar():
+
     try:
+
         return sqlite3.connect('loja.db')
+
     except Exception as e:
+
         print(f'Erro ao iniciar ligação à base de dados: {str(e)}')
+
         return ''
 
 def update_preco():
+
     conn = conectar()
     cursor = conn.cursor()
 

@@ -13,11 +13,15 @@ while True:
         dados['sexo'] = input('Digite o sexo [m/f]: ').strip().lower()
 
         if dados['sexo'] != 'm' and dados['sexo'] != 'f':
+
             print('Por favor introduza um sexo válido!')
+
         else:
+
             break
 
     if dados['sexo'] == 'f':
+
         qtd_mulheres += 1
 
     dados['idade'] = int(input('Digite a idade: '))
@@ -28,8 +32,10 @@ while True:
     qtd_pessoas += 1
 
 
-    opcao = input('Digite stop para terminar').strip().lower()
+    opcao = input('Digite STOP para terminar ENTER para continuar: ').strip().lower()
+
     if opcao == 'stop':
+
         break
 
 media_idades = round(soma_idades / qtd_pessoas, 2)

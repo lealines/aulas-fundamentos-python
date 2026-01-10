@@ -1,4 +1,5 @@
 def area():
+
     n1 = float(input('Digite um lado do terreno: '))
     n2 = float(input('Digite o outro lado do terreno: '))
 

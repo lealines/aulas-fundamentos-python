@@ -16,6 +16,7 @@ def main():
 
 
             print(f'\nO resultado de {num1} / {num2} é: {resultado}')
+
             break
 
         except ValueError:

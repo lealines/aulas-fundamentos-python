@@ -19,9 +19,11 @@ pessoa['Remanescente'] = pessoa['Rendimentos'] - pessoa['Despesas']
 pessoa['Crédito'] = pessoa['Montante_Crédito'] / (pessoa['Prazo_Anos'] * 12)
 
 if pessoa['Remanescente'] > pessoa['Crédito']:
+
     print()
     print(f'Crédito APROVADO! O valor mensal será {pessoa['Crédito']:.2f}€ durante {pessoa['Prazo_Anos']} anos.')
 
 else:
+
     print()
     print(f'Crédito REPROVADO!')

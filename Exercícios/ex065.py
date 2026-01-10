@@ -18,14 +18,20 @@ while auxiliar:
     maior_valor = 0
 
     for jogador, jogada in auxiliar.items():
+
         if jogada > maior_valor:
+
             maior_jogador = jogador
+
             maior_valor = jogada
 
     ranking.append((maior_jogador, maior_valor))
+
     del auxiliar[maior_jogador]
 
-for tupla in ranking:
-    for elemento in tupla:
+for linha in ranking:
+
+    for elemento in linha:
+
         print()
         print(f'{elemento}', end= ' ')

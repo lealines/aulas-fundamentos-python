@@ -1,9 +1,11 @@
 numeros = list()
 
 for linha in range(0, 3):
+
     temp = list()
 
     for c in range(0, 3):
+
         num = int(input('Digite um número: '))
         temp.append(num)
 
@@ -12,5 +14,6 @@ for linha in range(0, 3):
 for lista in numeros:
 
     for valor in lista:
+
         print(valor, end=' ')
     print()

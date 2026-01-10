@@ -2,43 +2,39 @@ from random import randint
 from time import sleep
 
 print('-- GERADOR DE CHAVES PARA EUROMILHÕES ---')
-sleep(0.5)
+n_palpites = int(input('\nQuantas chaves quer que gere: '))
 
-contador = 0
-n_palpites = int(input('Quantas chaves quer que gere: '))
-
+print(f'\nA gerar {n_palpites} palpites...\n')
 sleep(1)
 
-print(f'A gerar {n_palpites} palpites...')
+for c in range(1, n_palpites + 1):
 
-for c in range(n_palpites):
-
-    print('Palpite')
-
-    palpite = []
     numeros = []
     estrelas = []
 
     while len(numeros) < 5:
 
-        numero = randint(1, 50)
-        numeros.append(numero)
+        num = randint(1, 50)
 
-        if numero not in numeros:
-            numeros.append(numero)
+        if num not in numeros:
 
+            numeros.append(num)
+
+    numeros.sort()
 
     while len(estrelas) < 2:
 
-        estrela = randint(1, 12)
+        est = randint(1, 12)
 
-        if estrela not in estrelas:
-            estrelas.append(estrela)
+        if est not in estrelas:
 
-palpite.append(numeros[:])
-palpite.append(estrelas[:])
+            estrelas.append(est)
 
-for indice, linha in enumerate(palpite):
-    if indice == 0:
-        for numero in linha:
-            print(f'{numero} | ', endl='')
+    estrelas.sort()
+
+    print(f'Palpite {c}: ', end='')
+    print(f'{numeros}'.replace('[', '').replace(']', ''), end='  * ')
+    print(f'{estrelas}'.replace('[', '').replace(']', ''))
+    sleep(0.3)
+
+print('\nBoa sorte! Se sair 50% é para o desenvolvedor! :)')

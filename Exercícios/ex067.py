@@ -9,5 +9,7 @@ jogador['Golos'] = int(input('Digite a quantidade de golos marcados: '))
 jogador['Média'] = jogador['Golos'] / jogador['Jogos']
 
 print()
+
 for chave, valor in jogador.items():
+
     print(f'{chave} --> {valor}')

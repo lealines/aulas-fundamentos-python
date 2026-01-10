@@ -1,17 +1,35 @@
 def analisar_notas(notas):
 
     if not notas:
-        return {"erro": "Nenhuma nota fornecida"}
+
+        return {'erro': 'Nenhuma nota fornecida'}
 
     quantidade = len(notas)
-    maior_nota = max(notas)
-    media = sum(notas) / quantidade
+
+    maior_nota = notas[0]
+
+    soma = 0
+
+    for n in notas:
+
+        soma = soma + n
+
+        if n > maior_nota:
+
+            maior_nota = n
+
+    media = soma / quantidade
 
     if media > 12:
+
         situacao = "boa"
+
     elif media < 9.5:
+
         situacao = "fraca"
+
     else:
+
         situacao = "razoável"
 
     resultado = {
@@ -26,19 +44,33 @@ def analisar_notas(notas):
 notas_turma = []
 
 while True:
+
     entrada = input("Digite a nota do aluno ('stop' para parar): ")
+
     if entrada.lower() == "stop":
+
         break
+
     try:
+
         nota = float(entrada)
+
         if nota < 0 or nota > 20:
+
             print("\nValor inválido! Insira um valor entre 0 e 20.")
+
         else:
+
             notas_turma.append(nota)
+
     except ValueError:
+
         print("Valor inválido! Digite um número.")
 
 resultado = analisar_notas(notas_turma)
+
 print("\n--- Resultado da turma ---\n")
+
 for chave, valor in resultado.items():
+
     print(f"{chave.title()}: {valor}")
